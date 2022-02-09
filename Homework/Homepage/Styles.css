@@ -17,26 +17,40 @@ h1{
     background-color: lightblue;
     height: 275px;
     width: 370px;
-    
-    
 
-
-    bottom: 577px;
-    left: 0px; 
+    bottom: 680px;
+    left: 465px; 
 }
 
-.wrapper{
+.box_black{
     position: absolute;
+    width: 455px;
+    height: 1000px;
+    border: 1px solid blue;
+    margin: 0 auto;
+    background-color: grey;
+    top: 105px 
+}
+
+
+
+.picture{
+    
     margin: 0 auto;
     width: 250px;
+    
    display: block;
    margin-left: auto;
    margin-right: auto;
-   left: 370px;
-   bottom: 605px;
-   
    
 
+}
+
+.shit {
+    position: absolute;
+
+    font-size: 230%;
+    top: -35px;
 
 }
 
