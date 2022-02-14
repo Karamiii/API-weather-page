@@ -1,0 +1,55 @@
+
+#green {
+    color: green;
+
+
+}
+
+.red {
+    color: red;
+
+
+}
+a {
+    text-decoration: none;
+}
+#myText {
+    color: blue;
+
+}
+.dot1 {
+    position:relative;
+    height: 350px;
+    width: 350px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot2 {
+    position: relative;
+    height: 350px;
+    width: 350px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+  }.dot3
+   {
+     position: relative;
+    height: 350px;
+    width: 350px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  #red {
+      color:red;
+  }
+
+#blue {
+    color: blue;
+}
+#green {
+    color: green;
+}
+  
