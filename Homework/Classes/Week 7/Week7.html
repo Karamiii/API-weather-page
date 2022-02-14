@@ -10,18 +10,26 @@
 
 </head>
 <body>
+    <p>What is the password?</p>
+    <p><input id="password" type="text"></p>
+    <p><button id="check">Check</button></button></p>
+
     <script type="text/javascript">
-        var z = 7;
-        const y = 6;
-        let x = 5;
-      
 
-        z = 8;
-        x = 10;
+        document.getElementById("check").onclick = function() {
+            const password = "Javascript";
+            const enteredPassword = document.getElementById("password").value;
+
+            if (password == enteredPassword) {
+                console.log("Welcome friend!")
+            
+            } else {
+                console.log("Intruder!!!!")
+            }
+        }
+
         
-
-        console.log(x + ', ' + y + ', ' + z);
-
+     
     </script>
 
     
