@@ -5,7 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Number Guesser</title>
-    <link rel="stylesheet" href="Challenge2.css"/>
+    <style>
+
+        h1 {
+    position:fixed;
+    left: 100px;
+
+}
+
+h2 {
+    position: absolute;
+    top: 120px;
+    font-size: 130%;
+    left: 150px;
+    color: purple;
+}
+
+
+#Button {
+    position: absolute;
+    left: 300px;
+    top: 350px;
+
+}
+#guesser {
+    position: absolute;
+    left: 250px;
+    top: 250px;
+
+}
+
+#empty2 {
+    color: red;
+    position: absolute;
+    left: 170px;
+    top: 400px;
+    font-size: 150%;
+    
+    
+}
+
+
+#empty1 {
+    
+    position: absolute;
+    left: 220px;
+    top: 170px;
+    
+    
+}
+    </style>
 
 </head>
     <h1>How many fingers am I holding up?</h1>
@@ -48,7 +97,7 @@
             document.getElementById("empty1").innerHTML = `Congratulations!!! It was ${password}`;
             document.getElementById("Win").style.display = "none";
 
-            document.getElementById("empty2").innerHTML = "I was lying. There was never a price :(";
+            document.getElementById("empty2").innerHTML = "I was lying. There never was a price :(";
            
             
         }
