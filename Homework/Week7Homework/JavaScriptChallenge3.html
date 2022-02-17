@@ -77,6 +77,18 @@
 
 
     let startTime = new Date().getTime();
+    function randomColor() {
+
+        
+
+        let color = "#" + (Math.floor(Math.random()*16777215)).toString(16);
+
+        return color;
+
+
+
+
+    }
 
 
     
@@ -97,8 +109,8 @@
             document.getElementById("shape").style.borderRadius = "0";
 
         }
-
-        document.getElementById("shape").style.backgroundColor = "#" + (Math.floor(Math.random()*16777215)).toString(16);
+       
+        document.getElementById("shape").style.backgroundColor = randomColor();
         document.getElementById("shape").style.display = "block"
         
         startTime = new Date().getTime();
