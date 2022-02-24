@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoT</title>
+    <link rel="stylesheet" href="got.css" />
+</head>
+<body>
+    <h1>Game of Thrones</h1>
+    <div id="main-container">
+        <div id="character-list-container">
+
+        </div>
+        <div id="character-detail-container">
+            <h2 id="char-fullname"></h2>
+            <h3 id="char-title"></h3>
+            <img id="char-image">
+            <table>
+                <tr>
+                    <td class="table-label">Firstname:</td>
+                    <td class="table-detail" id="char-firstname"></td>
+                    
+                </tr>
+                <tr>
+                    <td class="table-label">Lastname:</td>
+                    <td class="table-detail" id="char-lastname"></td>
+                    
+                </tr>
+                <tr>
+                    <td class="table-label">Family:</td>
+                    <td class="table-detail" id="char-family"></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        populateCharacterDetails = (character) => {
+            document.getElementById("char-fullname").innerHTML = character.fullName
+            document.getElementById("char-title").innerHTML = character.title
+            const image = document.getElementById("char-image")
+            image.src = character.imageUrl
+
+
+            const tableLabels = document.getElementsByClassName("table-label")
+            for (label of tableLabels) {
+                label.style.display = 'block'
+            }
+
+
+            document.getElementById("char-firstname").innerHTML = character.firstName
+            document.getElementById("char-lastname").innerHTML = character.lastName
+            document.getElementById("char-family").innerHTML = character.family
+
+
+        }
+
+
+
+        fetchcharacterDetails = async (id) => {
+            console.log(id)
+            try {
+                const response = await fetch ('https://thronesapi.com/api/v2/Characters/' + id)
+                if (!response.ok) {
+                    throw new Error (response.statusText)
+                }
+                const data = await response.json()
+                console.log(data)
+                populateCharacterDetails(data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+        createListItem = (character) => {
+            const listItemElement = document.createElement('div')
+            listItemElement.className = "list-item-container"
+
+            const fullnameElement = document.createElement('div')
+            fullnameElement.className = "list-item-fullname"
+            const fullnameparagraph = document.createElement('p')
+            fullnameparagraph.innerHTML = character.fullName
+            fullnameElement.append(fullnameparagraph)
+
+            const avatarElement = document.createElement('div')
+            avatarElement.className = "list-item-avatar"
+            const image = document.createElement('img')
+            image.src = character.imageUrl
+            avatarElement.append(image)
+
+            listItemElement.append(fullnameElement)
+            listItemElement.append(avatarElement)
+
+
+            listItemElement.onclick = () => {
+                fetchcharacterDetails(character.id)
+            }
+
+
+            return listItemElement
+
+
+
+        }
+
+        fetchCharacterList = async () => {
+            const listContainer = document.getElementById("character-list-container")
+
+            try {
+                const response = await fetch ('https://thronesapi.com/api/v2/Characters')
+                if (!response.ok) {
+                    throw new Error(response.statusText)
+                }
+                const data = await response.json()
+                data.map(item => {
+                    const listItem = createListItem(item)
+                    listContainer.append(listItem)
+                })
+
+                console.log(data)
+            }catch (error) {
+                console.error(error)
+            }
+        }
+
+        fetchCharacterList()
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

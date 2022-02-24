@@ -1,1 +1,11 @@
-GET 
+GET https://thronesapi.com/api/v2/Characters
+
+###
+
+https://thronesapi.com/api/v2/Characters/2
+
+
+
+
+
+
