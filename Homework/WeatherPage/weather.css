@@ -6,7 +6,20 @@
 
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(6, 88, 116);
  
+}
+
+.box {
+    position: absolute;
+    background-color: lightblue;
+    height: 600px;
+    width: 750px;
+    left: 600px;
+    top: 180px;
+    border-radius: 20%;
+    
+  
 }
 
 .input {
@@ -38,6 +51,28 @@ input[type="submit"] {
 }
 
 .display {
+    position: relative;
     text-align: center;
-    
+    margin: 10px;
+    top: 150px;
+
+}
+
+.desc {
+    font-size: 150%;
+    margin: 5px;
+}
+
+.temp {
+    font-size: 150%;
+}
+.sorry {
+    margin: 30px;
+    font-weight: bold;
+
+}
+.start {
+    font-size: larger;
+    font-weight: bold;
+
 }
