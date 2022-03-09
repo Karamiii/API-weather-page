@@ -29,7 +29,7 @@ var start2 = document.querySelector('.start')
     
 
 
-    .catch(() => alert("Wrong city name!"))
+    .catch(() => alert("Error! City does not exist"))
 
     
    })     
