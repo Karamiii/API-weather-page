@@ -5,7 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoT</title>
-    <link rel="stylesheet" href="got.css" />
+    
+    <style>
+
+        body {
+    background-color: lightgray;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    
+}
+
+#main-container {
+    display: flex;
+    
+}
+
+#character-list-container,
+#character-detail-container {
+    background-color: white;
+    
+    width: 50%;
+    border: 1px black solid;
+    margin: 5px;
+   
+
+}
+#character-list-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.list-item-container {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+.list-item-container:hover {
+    background-color: lightgray;
+}
+.list-item-fullname {
+    text-align: left;
+    width: 70%;
+}
+.list-item.avatar {
+    width: 30%;
+}
+.list-item-avatar > img {
+    width: 75px;
+    height: 75px;
+}
+.table-label{
+    
+    font-size: 20px;
+    display: none;
+    
+}
+#char-image {
+    width: 300px;
+    height: 300px;
+}
+
+    </style>
 </head>
 <body>
     <h1>Game of Thrones</h1>
