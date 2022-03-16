@@ -1,0 +1,14 @@
+#container {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#collectors {
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+td {
+    padding: 3px;
+}
