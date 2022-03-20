@@ -4,9 +4,13 @@
 
 }
 
-#collectors {
+#collectors, #collector {
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#back {
+    padding-top: 40px;
 }
 
 td {

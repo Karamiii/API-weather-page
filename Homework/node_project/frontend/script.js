@@ -1,17 +1,7 @@
 "use strict";
 
 
-const fetchCollectors = async () => {
-    try {
-        const response = await fetch('http://localhost:5000/api/collectors/');
-        const data = await response.json();
-        console.log(data)
-    }
-    catch (error) {
-        console.error(error);
-    }
-}
-fetchCollectors();
+
 
 
 
@@ -23,8 +13,10 @@ const populateTable = (data) => {
 
         const idColumn = document.createElement("td");
         idColumn.className = "id-column";
-        idColumn.innerHTML = item.id;
-        row.appendChild(idColumn);
+        idColumn.innerHTML = '<a href="collector.html">' + item.id + '</a>';
+        idColumn.onclick = () => {
+            sessionStorage.setItem("collectorId", item.id)
+        }
 
         const nameColumn = document.createElement("td");
         nameColumn.className = "name-column";
@@ -43,6 +35,19 @@ const populateTable = (data) => {
 
         table.appendChild(row)
     })
+    
 }
-populateTable()
+const fetchCollectors = async () => {
+    try { 
+        const response = await fetch ('http://localhost:5000/api/collectors/');
+        const jsonData = await response.json();
+        populateTable(jsonData.data)
+
+        
+    } catch (error) {
+        console.error(error);
+    }
+}
+fetchCollectors()
+
 
