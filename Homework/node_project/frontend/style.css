@@ -1,10 +1,13 @@
+
+
 #container {
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    left: 100px;
 
 }
 
 #collectors, #collector {
+    left: 50px;
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
