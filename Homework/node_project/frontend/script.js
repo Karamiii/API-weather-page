@@ -17,6 +17,7 @@ const populateTable = (data) => {
         idColumn.onclick = () => {
             sessionStorage.setItem("collectorId", item.id)
         }
+        row.appendChild(idColumn);
 
         const nameColumn = document.createElement("td");
         nameColumn.className = "name-column";
