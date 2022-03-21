@@ -12,6 +12,7 @@ const COLLECTORS = [
     cars: ["JLR", "Mahindra", "Mahindra"],
     slogan: "et netus et malesuada fames ac turpis egestas. Fusce aliquet",
     trading: true
+    
     },
     {
     id: 2,
