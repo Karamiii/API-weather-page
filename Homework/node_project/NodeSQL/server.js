@@ -71,7 +71,10 @@ app.post('/api/collectors/', async (req, res) => {
 
     const client = await pool.connect();
     try {
-        const result = await pool.query(`INSERT INTO collectors (name, email, cars, slogan, trading) VALUES ($1, $2, $3, $4, $5)`, [name, email, cars, slogan, trading]);
+        const result = await pool.query(`
+        INSERT INTO collectors (name, email, cars, slogan, trading)
+         VALUES ($1, $2, $3, $4, $5)`,
+        [name, email, cars, slogan, trading]);
         client.release();
         if(result.rowCount === 1) {
             return res.status(200).json({message: "Collector added"});
