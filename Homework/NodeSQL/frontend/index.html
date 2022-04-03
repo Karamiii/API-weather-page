@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> Sorry. I didn't have time or energy to make it look better than this.<br> But hey, atleast it works :) <br>I have to go do my math homework now...</h1>
+    
 <div class="box">
     <div id="container">
         <table id="collectors">
@@ -19,7 +19,63 @@
 
 
     </div>
+
+
 </div>
-    <script src="./script.js"></script>
+
+<form>
+    <fieldset>
+      <label for="nameField">Name</label>
+      <input
+        name="name"
+        type="text"
+        placeholder="Kellogs dude"
+        id="nameField"
+      />
+      <label for="email">Email</label>
+      <input
+        name="email"
+        type="text"
+        placeholder="kellogs.sample@hotmail.com"
+        id="emailField"/>
+
+      <label for="carfield">Car</label>
+      <input
+        name="cars"
+        type="text"
+        placeholder="Lada"
+        id="carField"/>
+
+        <label for="sloganField">Slogan</label>
+      <input
+        name="slogan"
+        type="text"
+        placeholder="Water is wet"
+        id="sloganField"/>
+
+      <div class="float-right">
+        <input
+          name="trading"
+          value="1"
+          type="checkbox"
+          id="confirmField"
+        />
+        <label class="label-inline" for="confirmField"
+          >Trading (Check for true)</label
+        >
+      </div>
+      <input class="button-primary" type="submit" value="Send" />
+    </fieldset>
+  </form>
+    
+    
+
+
+    <script src="./script.js">
+    
+
+      
+
+    </script>
 </body>
 </html>

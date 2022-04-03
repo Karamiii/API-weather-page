@@ -1,12 +1,17 @@
 "use strict";
 
+
 const populateCollector = (details) => {
+    
     document.getElementById("collector-name").innerHTML = details.name
     document.getElementById("collector-email").innerHTML = details.email
     document.getElementById("collector-cars").innerHTML = details.cars
     document.getElementById("collector-slogan").innerHTML = details.slogan
     document.getElementById("collector-trading").innerHTML = details.trading
+    console.log(details)
+   
 }
+
 
 
 const fetchCollectorDetails = async (id) => {
@@ -15,12 +20,11 @@ const fetchCollectorDetails = async (id) => {
         await fetch('http://localhost:5000/api/collectors/' + id);
         const data = await response.json();
         populateCollector(data);
+        console.log(data)
     } catch (error) {
         console.error(error);
     }
 }
-
-
 
 window.onload = function() {
     const collectorId = 
@@ -28,3 +32,10 @@ window.onload = function() {
     console.log(collectorId);
     fetchCollectorDetails(collectorId);
 }
+
+
+
+
+
+
+
