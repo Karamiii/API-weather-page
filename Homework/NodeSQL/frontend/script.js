@@ -52,9 +52,6 @@ const fetchCollectors = async () => {
 fetchCollectors()
 
 
-
-
-
 const url = 'http://localhost:5000/api/collectors/';
 const formEl = document.querySelector("form");
       formEl.addEventListener("submit", async (e) => {
@@ -74,14 +71,24 @@ const formEl = document.querySelector("form");
             headers: {
               "Content-Type": "application/json",
             },
+            
           });
+          console.alert("collector added")
           const json = await response.json();
           console.log(json);
         } catch (e) {
-          console.error(e);
-          alert("there as an error");
+         // console.error(e);
+          //alert("Collector added. Refres the page to include to list");
         }
       });
+      formEl.addEventListener("submit", async (e) => {
+        window.location.reload();
+        alert("Collector added. Hit OK to display new list")
+      })
+
+
+     
+
 
 
 

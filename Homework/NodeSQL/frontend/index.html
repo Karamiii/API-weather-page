@@ -8,74 +8,80 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  
     
 <div class="box">
+  <h1 id="hey">This is ugly but it works... to some extent.</h1>
     <div id="container">
         <table id="collectors">
-            
-
-
-        </table>
-
-
+          
     </div>
+    
 
-
-</div>
-
-<form>
-    <fieldset>
+  </table>
+  </body>
+  <body>
+<div>
+  <form>
+    <fieldset id="formadjust">
+      <h1>POST FORM</h1>
+      <h2>Fill the form and hit submit to send data to backend</h2>
+        <div id="nameField1">
       <label for="nameField">Name</label>
       <input
         name="name"
         type="text"
-        placeholder="Kellogs dude"
+        placeholder="Kellogs dude.Sample"
         id="nameField"
       />
+    </div>
+        <div id="emailField2">
       <label for="email">Email</label>
       <input
         name="email"
         type="text"
         placeholder="kellogs.sample@hotmail.com"
         id="emailField"/>
+    </div>
+
+    <div id="carField2">
 
       <label for="carfield">Car</label>
       <input
         name="cars"
         type="text"
-        placeholder="Lada"
+        placeholder="Lada.Sample"
         id="carField"/>
+    </div>
 
+
+        <div id="sloganfield2">
         <label for="sloganField">Slogan</label>
       <input
         name="slogan"
         type="text"
-        placeholder="Water is wet"
+        placeholder="Water is wet.Sample"
         id="sloganField"/>
+    </div>
 
+
+    <div id="tradingBox">
       <div class="float-right">
         <input
           name="trading"
           value="1"
           type="checkbox"
-          id="confirmField"
-        />
-        <label class="label-inline" for="confirmField"
-          >Trading (Check for true)</label
-        >
+          id="confirmField"/>
+    
+        <label class="label-inline" for="confirmField">Trading (Check for true)</label>
+    </div>
       </div>
-      <input class="button-primary" type="submit" value="Send" />
+      <input class="button-primary" type="submit" value="Submit" />   
     </fieldset>
   </form>
-    
-    
-
-
-    <script src="./script.js">
-    
-
-      
-
-    </script>
+</div>
+</div>
+    <script src="./script.js"></script>
 </body>
 </html>

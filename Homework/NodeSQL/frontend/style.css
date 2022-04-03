@@ -1,1 +1,106 @@
 
+.box {
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-height: 100%;
+}
+
+#container {
+    background-color: rgb(244, 248, 248);
+    position: absolute;
+    top: 160px;
+    left: 1000px;
+   
+
+}
+
+#collectors, #collector {
+    left: 50px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#back {
+    position: absolute;
+    padding-top: 40px;
+    font-size: 35px;
+    top: 120px;
+    left: 30px;
+    
+}
+
+td {
+    padding: 7px;
+}
+.id-column {
+    height: 50px;
+    width: 50px;
+    background: #e7e7e7;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+}
+#formadjust{
+background-color: aliceblue;
+position: absolute;
+left: -930px;
+top: 0px;
+height: 550px;
+width: 600px;
+
+}
+
+
+input[type="text"] {
+    height: 50px;
+    width: 600px;
+    background: #e7e7e7;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 10px;
+}
+
+input[type="submit"] {
+
+    height: 50px;
+    width: 100px;
+    background: #456ae2;
+    font-weight: bold;
+    font-size: 20px;
+    border:rgb(214, 32, 8);
+    border-radius: 5px;
+    padding: 10px, 10px;
+    border: 5px;
+
+}
+
+#reload{
+    position:absolute;
+    top: 100px;
+}
+
+.label-inline{
+    height: 20px;
+    width: 50px;
+}
+
+#container2 {
+    background-color: rgb(244, 248, 248);
+    position: absolute;
+    top: 180px;
+    left: 300px;
+}
+
+#hey{
+    position:absolute;
+    top: 30px;
+    left: 600px;
+
+}
+
