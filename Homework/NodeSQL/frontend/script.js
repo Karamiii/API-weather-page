@@ -10,7 +10,7 @@ const populateTable = (data) => {
     
   
     data.map(item => {
-      console.log(item)
+      
         const row = document.createElement("tr");
 
         const idColumn = document.createElement("td");
@@ -25,7 +25,7 @@ const populateTable = (data) => {
         nameColumn.className = "name-column";
         nameColumn.innerHTML = item.name;
         row.appendChild(nameColumn);
-        console.log(item.email)
+        //console.log(item.email)
 
         const emailColumn = document.createElement("td");
         emailColumn.className = "email-column";
@@ -64,7 +64,7 @@ const formEl = document.querySelector("form");
           ...formDataSerialized,
           trading: formDataSerialized.trading ? true : false,
         };
-        console.log(formDataSerialized)
+        //console.log(formDataSerialized)
         try {
           const response = await fetch(url, {
             method: "POST",
@@ -77,9 +77,9 @@ const formEl = document.querySelector("form");
           });
           console.alert("collector added")
           const json = await response.json();
-          console.log(json);
+          //console.log(json);
         } catch (e) {
-         // console.error(e);
+         console.error(e);
           //alert("Collector added. Refres the page to include to list");
         }
       });

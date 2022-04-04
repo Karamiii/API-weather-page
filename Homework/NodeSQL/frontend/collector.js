@@ -10,7 +10,6 @@ const populateCollector = (details) => {
     document.getElementById("collector-cars").innerHTML = details.cars
     document.getElementById("collector-slogan").innerHTML = details.slogan
     document.getElementById("collector-trading").innerHTML = details.trading
-    
    
 }
 
@@ -20,8 +19,8 @@ const fetchCollectorDetails = async (id) => {
     try {
         const response = 
         await fetch('http://localhost:5000/api/collectors/' + id);
-        const dataNew = await response.json();
-        populateCollector(dataNew.data);
+        const NewData = await response.json();
+        populateCollector(NewData.data);
         //Never ever call data = data...
         // took me hours to find the missing data.data
     } catch (error) {
@@ -34,6 +33,13 @@ window.onload = function() {
     sessionStorage.getItem("collectorId");
     //console.log(collectorId);
     fetchCollectorDetails(collectorId);
+   showId(collectorId);
+}
+
+const showId = async (id) => {
+    //console.log(id)
+    document.getElementById("ID").innerHTML = "Container id: " + id;
+
 }
 
 
