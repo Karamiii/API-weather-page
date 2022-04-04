@@ -46,9 +46,14 @@ const fetchCollectors = async () => {
         const response = await fetch ('http://localhost:5000/api/collectors/');
         const jsonData = await response.json();
         populateTable(jsonData.data)
+
+        if (!response.ok) {
+          throw new Error (response.statusText)
+        }
          
     } catch (error) {
         console.error(error);
+        alert("There was an issue fetching data. Check server status.")
     }
 }
 fetchCollectors()
@@ -66,32 +71,34 @@ const formEl = document.querySelector("form");
         };
         //console.log(formDataSerialized)
         try {
+          
           const response = await fetch(url, {
+
             method: "POST",
             body: JSON.stringify(jsonObject),
+            
 
             headers: {
               "Content-Type": "application/json",
             },
             
           });
-          console.alert("collector added")
-          const json = await response.json();
-          //console.log(json);
-        } catch (e) {
-         console.error(e);
-          //alert("Collector added. Refres the page to include to list");
+          if (!response.ok) {
+            throw new Error (response.statusText)
+        } else {
+          //console.log("all good")
+          alert("Collector added successfully!")
         }
+          const json = await response.json();
+          
+        } catch (error) {
+         console.log(error);
+         alert("Connection failed. Check server status") 
+        }
+        
+        window.location.reload()
       });
 
-      formEl.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        window.location.reload();
-        alert("Collector added. Hit OK to display new list")
-      })
-
-
-     
 
 
 
