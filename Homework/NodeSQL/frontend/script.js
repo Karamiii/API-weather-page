@@ -7,8 +7,10 @@
 
 const populateTable = (data) => {
     const table = document.getElementById("collectors")
-
+    
+  
     data.map(item => {
+      console.log(item)
         const row = document.createElement("tr");
 
         const idColumn = document.createElement("td");
@@ -23,6 +25,7 @@ const populateTable = (data) => {
         nameColumn.className = "name-column";
         nameColumn.innerHTML = item.name;
         row.appendChild(nameColumn);
+        console.log(item.email)
 
         const emailColumn = document.createElement("td");
         emailColumn.className = "email-column";
@@ -43,8 +46,7 @@ const fetchCollectors = async () => {
         const response = await fetch ('http://localhost:5000/api/collectors/');
         const jsonData = await response.json();
         populateTable(jsonData.data)
-
-        
+         
     } catch (error) {
         console.error(error);
     }
@@ -81,7 +83,9 @@ const formEl = document.querySelector("form");
           //alert("Collector added. Refres the page to include to list");
         }
       });
+
       formEl.addEventListener("submit", async (e) => {
+        e.preventDefault();
         window.location.reload();
         alert("Collector added. Hit OK to display new list")
       })

@@ -1,11 +1,13 @@
 "use strict";
 
 const populateCollector = (details) => {
+    
     document.getElementById("collector-name").innerHTML = details.name
     document.getElementById("collector-email").innerHTML = details.email
     document.getElementById("collector-cars").innerHTML = details.cars
     document.getElementById("collector-slogan").innerHTML = details.slogan
     document.getElementById("collector-trading").innerHTML = details.trading
+    //console.log(details)    
 }
 
 
@@ -25,6 +27,6 @@ const fetchCollectorDetails = async (id) => {
 window.onload = function() {
     const collectorId = 
     sessionStorage.getItem("collectorId");
-    console.log(collectorId);
+    //console.log(collectorId);
     fetchCollectorDetails(collectorId);
 }
