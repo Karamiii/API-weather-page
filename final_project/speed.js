@@ -39,7 +39,7 @@ const populateTable = (data) => {
 }
 const fetchCollectors = async () => {
     try { 
-        const response = await fetch ('http://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed');
+        const response = await fetch ('https://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed');
         const jsonData = await response.json();
        // console.log(jsonData)
         populateTable(jsonData)

@@ -24,7 +24,7 @@ const populateTable = (data) => {
         //console.log(time)
 
         const temp = Math.round(item.temperature)
-        console.log(temp)
+       // console.log(temp)
 
         const dateColumn = document.createElement("td");
         dateColumn.className = "date-column";
@@ -42,7 +42,7 @@ const populateTable = (data) => {
 }
 const fetchCollectors = async () => {
     try { 
-        const response = await fetch ('http://webapi19sa-1.course.tamk.cloud/v1/weather/temperature');
+        const response = await fetch ('https://webapi19sa-1.course.tamk.cloud/v1/weather/temperature');
         const jsonData = await response.json();
        // console.log(jsonData)
         populateTable(jsonData)
