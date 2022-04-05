@@ -27,6 +27,6 @@ const fetchCollectorDetails = async (id) => {
 window.onload = function() {
     const collectorId = 
     sessionStorage.getItem("collectorId");
-    //console.log(collectorId);
+    console.log(collectorId);
     fetchCollectorDetails(collectorId);
 }
