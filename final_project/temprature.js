@@ -5,6 +5,7 @@ const populateTable = (data) => {
    // console.log(data)
 
     data.map(item => {
+        
         const row = document.createElement("tr");
      
        const time = new Date(item.date_time)
@@ -30,6 +31,11 @@ const populateTable = (data) => {
         table.appendChild(row)
     })
 
+    const chart = Chart.getChart("tempChart");
+    if (chart != undefined) {
+        chart.destroy();
+        
+    }
     new Chart("tempChart", {
         
         type: "bar",
@@ -56,11 +62,44 @@ const populateTable = (data) => {
 
         }
     })
+    
 
 
     
 }
-const fetchCollectors = async () => {
+const fetchCollectors = async (time) => {
+    try { 
+        const response = await fetch ('https://webapi19sa-1.course.tamk.cloud/v1/weather/temperature/' + time);
+        const jsonData = await response.json();
+       // console.log(jsonData)
+        populateTable(jsonData)
+
+        
+    } catch (error) {
+        console.error(error);
+    }
+    
+}
+
+const selectTime = document.getElementById("timespanSelect");
+selectTime.addEventListener('change', (event) => {
+    console.log(selectTime.value)
+    if (selectTime.value === "0") {
+        
+        fetchCollectors2()
+        
+
+    }
+    else {
+        
+    fetchCollectors(selectTime.value)
+    
+    }
+    
+
+})
+
+const fetchCollectors2 = async () => {
     try { 
         const response = await fetch ('https://webapi19sa-1.course.tamk.cloud/v1/weather/temperature');
         const jsonData = await response.json();
@@ -71,5 +110,8 @@ const fetchCollectors = async () => {
     } catch (error) {
         console.error(error);
     }
+    
 }
-fetchCollectors()
+
+fetchCollectors2();
+

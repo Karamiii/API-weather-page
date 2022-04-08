@@ -1,7 +1,7 @@
 "use strict";
 
 const populateTable = (data) => {
-    console.log(data)
+    
     
     // Creating a table of elements from APi data
 
@@ -32,6 +32,11 @@ const populateTable = (data) => {
     })
 
     // Drawing a chart from fetched API data
+
+    const chart = Chart.getChart("speedChart");
+    if (chart != undefined) {
+        chart.destroy();
+    }
     
     new Chart("speedChart", {
         
@@ -57,18 +62,16 @@ const populateTable = (data) => {
             }
 
         }
-    })
-
-    
+    })  
 }    
     
 // Fething data from an API and sending in forwards to function(s)
 
-const fetchCollectors = async () => {
+const fetchCollectors = async (time) => {
     try { 
-        const response = await fetch ('https://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed');
+        const response = await fetch ('https://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed/' + time);
         const jsonData = await response.json();
-       console.log("First fetch:", jsonData)
+       
         populateTable(jsonData)
         //drawChart(jsonData)
 
@@ -78,6 +81,32 @@ const fetchCollectors = async () => {
     }
 }
 
+const selectTime = document.getElementById("timespanSelect");
+selectTime.addEventListener('change', (event) => {
+    
+    if (selectTime.value === "0") {
+        fetchCollectors2()
+
+    }
+    else {
+    fetchCollectors(selectTime.value)
+    }
+
+})
+
+const fetchCollectors2 = async () => {
+    try { 
+        const response = await fetch ('https://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed/');
+        const jsonData = await response.json();
+       // console.log(jsonData)
+        populateTable(jsonData)
+
+        
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+fetchCollectors2();
 
 
-fetchCollectors()

@@ -65,11 +65,16 @@ a.active,a:hover{
 
 td {
 
-    padding: 10px 80px;
+    padding: 10px 50px;
     color: black;
     background-color: #0082e6;
-    border-style: outset;
+    border-style:ridge;
+    max-width: 400px;
     
+}
+
+tr {
+    max-width: 250px;
 }
 
 
@@ -83,10 +88,45 @@ td {
 #speedChart {
     top: 150px;
     position:absolute;
-    left: 1000px;
+    left: 1100px;
 }
  #tempChart{
     top: 150px;
     position:absolute;
-    left: 1000px;
+    left: 1100px;
 }
+#timespan{
+
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 600px;
+    top: 200px;
+    padding-left: 100px;
+    padding-right: 50px;
+}
+
+#timespanSelect{
+    padding: 8px 12px;
+    background-color: rgb(230, 217, 217);
+    border: 1px solid #0082e6;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: large;
+
+}
+
+#timespanSelect:focus,
+#timespanSelect:hover {
+    outline: none;
+    border: 3px solid #0082e6;
+}
+
+h3 {
+    padding: 10px;
+}
+
+
