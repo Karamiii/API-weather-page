@@ -6,16 +6,7 @@ const populateTable = (data) => {
 
     data.map(item => {
         const row = document.createElement("tr");
-/*
-        const idColumn = document.createElement("td");
-        idColumn.className = "id-column";
-        idColumn.innerHTML = '<a href="collector.html">' + item.id + '</a>';
-        idColumn.onclick = () => {
-            sessionStorage.setItem("collectorId", item.id)
-        }
-        row.appendChild(idColumn);
-
-*/      
+      
        const time = new Date(item.date_time)
        
         const NewTime = time.toLocaleString('fi-FI')

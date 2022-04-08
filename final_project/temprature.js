@@ -6,16 +6,7 @@ const populateTable = (data) => {
 
     data.map(item => {
         const row = document.createElement("tr");
-/*
-        const idColumn = document.createElement("td");
-        idColumn.className = "id-column";
-        idColumn.innerHTML = '<a href="collector.html">' + item.id + '</a>';
-        idColumn.onclick = () => {
-            sessionStorage.setItem("collectorId", item.id)
-        }
-        row.appendChild(idColumn);
-
-*/      
+     
        const time = new Date(item.date_time)
        
         const NewTime = time.toLocaleString('fi-FI')
@@ -38,6 +29,35 @@ const populateTable = (data) => {
         
         table.appendChild(row)
     })
+
+    new Chart("tempChart", {
+        
+        type: "bar",
+        data: {
+            datasets: [{
+                data: data,
+                backgroundColor: "#0082e6"
+
+            }]
+        },
+        options: {
+            parsing: {
+                xAxisKey: "date_time",
+                yAxisKey: "temperature",
+                key: "temperature"
+            },
+            plugins: {
+                legend: {display: true},
+                title: {
+                    display: true,
+                    text: "Temperatures"
+                }
+            }
+
+        }
+    })
+
+
     
 }
 const fetchCollectors = async () => {

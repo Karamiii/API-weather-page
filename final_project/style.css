@@ -67,7 +67,7 @@ td {
 
     padding: 10px 80px;
     color: black;
-    background-color: rgb(58, 126, 216);
+    background-color: #0082e6;
     border-style: outset;
     
 }
@@ -78,4 +78,15 @@ td {
     position:absolute;
     top:-120px;
     left: 250px;
+}
+
+#speedChart {
+    top: 150px;
+    position:absolute;
+    left: 1000px;
+}
+ #tempChart{
+    top: 150px;
+    position:absolute;
+    left: 1000px;
 }
