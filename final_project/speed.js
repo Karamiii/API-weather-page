@@ -16,6 +16,8 @@ const populateTable = (data) => {
         const NewTime = time.toLocaleString('fi-FI')
         time.toLocaleString('fi-FI')
 
+        const windspeed = Math.round(item.wind_speed)
+
         //console.log(time)
 
         const dateColumn = document.createElement("td");
@@ -25,7 +27,7 @@ const populateTable = (data) => {
 
         const valueColumn = document.createElement("td");
         valueColumn.className = "value-column";
-        valueColumn.innerHTML = item.wind_speed;
+        valueColumn.innerHTML = windspeed + ' m/s';
         row.appendChild(valueColumn)
         
         table.appendChild(row)
@@ -43,6 +45,7 @@ const populateTable = (data) => {
         type: "line",
         data: {
             datasets: [{
+                label: "Wind speed",
                 data: data,
                 backgroundColor: "#0082e6"
             }]
@@ -54,7 +57,7 @@ const populateTable = (data) => {
                 key: "wind_speed"
             },
             plugins: {
-                legend: {display: false},
+                legend: {display: true},
                 title: {
                     display: true,
                     text: "Wind speed"

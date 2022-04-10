@@ -1,35 +1,56 @@
 "use strict";
 
-const populateTable = (data) => {
-    const table = document.getElementById("collectors")
-   // console.log(data)
 
+
+
+
+
+const populateTable = (data) => {
+
+    const table = document.getElementById("collectors")
+    
+
+
+
+    
     data.map(item => {
         
+        
         const row = document.createElement("tr");
-     
-       const time = new Date(item.date_time)
+        row.id = "work";
+        
+        const time = new Date(item.date_time)
+
        
         const NewTime = time.toLocaleString('fi-FI')
         time.toLocaleString('fi-FI')
+            // console.log(data)
+
 
         //console.log(time)
 
+        
+
         const temp = Math.round(item.temperature)
+        const parseData = (item)
        // console.log(temp)
 
         const dateColumn = document.createElement("td");
-        dateColumn.className = "date-column";
+        dateColumn.id = "date-column";
         dateColumn.innerHTML = NewTime;
         row.appendChild(dateColumn);
 
         const valueColumn = document.createElement("td");
-        valueColumn.className = "value-column";
+        valueColumn.id = "value-column";
         valueColumn.innerHTML = temp + " °C";
         row.appendChild(valueColumn)
         
         table.appendChild(row)
+        
+        
+       
     })
+    
 
     const chart = Chart.getChart("tempChart");
     if (chart != undefined) {
@@ -41,6 +62,7 @@ const populateTable = (data) => {
         type: "bar",
         data: {
             datasets: [{
+                label: "Temperature",
                 data: data,
                 backgroundColor: "#0082e6"
 
@@ -73,6 +95,8 @@ const fetchCollectors = async (time) => {
         const jsonData = await response.json();
        // console.log(jsonData)
         populateTable(jsonData)
+       
+       
 
         
     } catch (error) {
@@ -84,19 +108,16 @@ const fetchCollectors = async (time) => {
 const selectTime = document.getElementById("timespanSelect");
 selectTime.addEventListener('change', (event) => {
     console.log(selectTime.value)
+    
     if (selectTime.value === "0") {
         
         fetchCollectors2()
         
-
     }
-    else {
-        
+    else {     
     fetchCollectors(selectTime.value)
-    
     }
     
-
 })
 
 const fetchCollectors2 = async () => {

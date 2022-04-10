@@ -86,12 +86,17 @@ tr {
 }
 
 #speedChart {
-    top: 150px;
+    top: 250px;
     position:absolute;
     left: 1100px;
 }
  #tempChart{
-    top: 150px;
+    top: 250px;
+    position:absolute;
+    left: 1100px;
+}
+#valueChart{
+    top: 250px;
     position:absolute;
     left: 1100px;
 }
@@ -128,5 +133,37 @@ tr {
 h3 {
     padding: 10px;
 }
+
+
+#valueSelect{
+    padding: 8px 12px;
+    background-color: rgb(230, 217, 217);
+    border: 1px solid #0082e6;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: large;
+
+}
+
+#valueSelect:focus,
+#valueSelect:hover {
+    outline: none;
+    border: 3px solid #0082e6;
+}
+
+#value{
+
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 600px;
+    top: 430px;
+    padding-left: 100px;
+    padding-right: 50px;
+}
+
 
 

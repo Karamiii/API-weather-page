@@ -1,10 +1,26 @@
 "use strict";
 
-const populateTable = (data) => {
+const populateTable = (data, value) => {
     const table = document.getElementById("collectors")
-   // console.log(data)
+   
+    console.log("populate table value:", value)
 
     data.map(item => {
+
+        const temp = Math.round(item.temperature)
+        const windSpeed = Math.round(item.wind_speed)
+        const airPres1 = Math.round(item.Air_pres_1)
+        const BMPtemp = Math.round(item.BMP_temp_1)
+        const DHT11Hum = Math.round(item.DHT11_hum_1)
+        const DHTtemp = Math.round(item.DHT11__temp_1)
+        const DStemp = Math.round(item.DS1820_temp_1)
+        const HumidityIn = Math.round(item.humidity_in)
+        const HumidityOut = Math.round(item.humidity_out)
+        const Rainbow = Math.round(item.RAINBOW)
+        const Light = Math.round(item.light)
+        const Rain = Math.round(item.rain)
+        const WindDIrection = Math.round(item.wind_direction)
+        
         const row = document.createElement("tr");
       
        const time = new Date(item.date_time)
@@ -22,26 +38,106 @@ const populateTable = (data) => {
 
         const valueColumn = document.createElement("td");
         valueColumn.className = "value-column";
-        valueColumn.innerHTML = item.data.wind_speed || item.data.temperature || item.data.Air_pres_1
-        || item.data.BMP_temp_1 || item.data.DHT11_hum_1 || item.data.DHT11__temp_1 || item.data.DS1820_temp_1
-        || item.data.humidity_in || item.data.humidity_out || item.data.JollyCooperation || item.data.light
-        || item.data.rain || item.data.wind_direction;
+        valueColumn.innerHTML =  windSpeed || temp || airPres1
+        || BMPtemp || DHT11Hum || DHTtemp || DStemp
+        || HumidityIn || HumidityOut || Rainbow || Light
+        || Rain || WindDIrection; 
+        
         row.appendChild(valueColumn)
         
         table.appendChild(row)
+
+       
+        
     })
+
+   
+        
+}
+
+const drawChart = (data, value) => {
+const chart = Chart.getChart("valueChart");
+document.getElementById("name").innerHTML = value
+if (chart != undefined) {
+    chart.destroy();
     
 }
-const fetchCollectors = async () => {
+new Chart("valueChart", {
+    
+    type: "line",
+    data: {
+        datasets: [{
+            label: value,
+            data: data,
+            backgroundColor: "#0082e6",
+            fill: true,
+            pointStyle: 'cross'
+
+        }]
+    },
+    options: {
+        parsing: {
+            xAxisKey: "date_time",
+            yAxisKey: value,
+            key: value
+        },
+        plugins: {
+            legend: {
+                display: true,
+                
+            },
+            title: {
+                display: true,
+                text: value + ' chart'
+            }
+        }
+
+    }
+})
+
+}
+const fetchCollectors = async (value, valueTime) => {
     try { 
-        const response = await fetch ('https://webapi19sa-1.course.tamk.cloud/v1/weather/limit/50');
+        console.log("Value:",value)
+        console.log("time:", valueTime)
+        const response = await fetch ('https://webapi19sa-1.course.tamk.cloud/v1/weather/' + value + '/' + valueTime);
         const jsonData = await response.json();
        // console.log(jsonData)
-        populateTable(jsonData)
+        populateTable(jsonData, value)
+        drawChart(jsonData, value)
+        
 
         
     } catch (error) {
         console.error(error);
     }
 }
-fetchCollectors()
+
+const selectValue = document.getElementById("valueSelect");
+selectValue.addEventListener('change', (event) => {
+   
+    fetchCollectors(selectValue.value, selectTime.value)
+
+    console.log("time Inside select value: " ,selectTime.value)
+    
+ 
+})
+
+const selectTime = document.getElementById("timespanSelect");
+selectTime.addEventListener('change', (event) => {
+
+    fetchCollectors(selectValue.value, selectTime.value)
+    console.log("value Inside select time: " ,selectValue.value)
+
+
+})
+
+
+
+
+const holder1 = "temperature";
+const holder2 = " ";
+
+
+fetchCollectors(holder1, holder2)
+
