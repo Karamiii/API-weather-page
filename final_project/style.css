@@ -82,7 +82,7 @@ tr {
 #name{
     position:absolute;
     top:-120px;
-    left: 250px;
+    left: 710px;
 }
 
 #speedChart {
@@ -108,7 +108,7 @@ tr {
     justify-content: center;
     align-items: center;
     left: 600px;
-    top: 200px;
+    top: 250px;
     padding-left: 100px;
     padding-right: 50px;
 }
@@ -160,9 +160,21 @@ h3 {
     justify-content: center;
     align-items: center;
     left: 600px;
-    top: 430px;
+    top: 480px;
     padding-left: 100px;
     padding-right: 50px;
+}
+
+#tellDate{
+    position:absolute;
+    top: -50px;
+    left: 30px;
+}
+
+#tellValue{
+    position: absolute;
+    top: -50px;
+    left: 370px;
 }
 
 
