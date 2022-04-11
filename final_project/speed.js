@@ -1,5 +1,12 @@
 "use strict";
 
+const resetTable = () => {
+
+    document.getElementById("collectors").innerHTML = " ";
+
+}
+
+
 const populateTable = (data) => {
     
     
@@ -88,10 +95,13 @@ const selectTime = document.getElementById("timespanSelect");
 selectTime.addEventListener('change', (event) => {
     
     if (selectTime.value === "0") {
+        resetTable()
         fetchCollectors2()
+
 
     }
     else {
+        resetTable()
     fetchCollectors(selectTime.value)
     }
 

@@ -1,5 +1,11 @@
 "use strict";
 
+const resetTable = () => {
+
+    document.getElementById("collectors").innerHTML = " ";
+
+}
+
 const populateTable = (data, value) => {
     const table = document.getElementById("collectors")
    
@@ -7,19 +13,19 @@ const populateTable = (data, value) => {
 
     data.map(item => {
 
-        const temp = Math.round(item.temperature)
-        const windSpeed = Math.round(item.wind_speed)
-        const airPres1 = Math.round(item.Air_pres_1)
-        const BMPtemp = Math.round(item.BMP_temp_1)
-        const DHT11Hum = Math.round(item.DHT11_hum_1)
-        const DHTtemp = Math.round(item.DHT11__temp_1)
-        const DStemp = Math.round(item.DS1820_temp_1)
-        const HumidityIn = Math.round(item.humidity_in)
-        const HumidityOut = Math.round(item.humidity_out)
-        const Rainbow = Math.round(item.RAINBOW)
-        const Light = Math.round(item.light)
-        const Rain = Math.round(item.rain)
-        const WindDIrection = Math.round(item.wind_direction)
+        const temp = item.temperature?Math.round(item.temperature) + " °C": ""
+        const windSpeed = item.wind_speed?Math.round(item.wind_speed) + " m/s": ""
+        const airPres1 = item.Air_pres_1?Math.round(item.Air_pres_1)+ " Pa": ""
+        const BMPtemp = item.BMP_temp_1?Math.round(item.BMP_temp_1) + " °C": ""
+        const DHT11Hum = item.DHT11_hum_1?Math.round(item.DHT11_hum_1) + " %": ""
+        const DHTtemp = item.DHT11__temp_1?Math.round(item.DHT11__temp_1)+ " °C": ""
+        const DStemp = item.DS1820_temp_1?Math.round(item.DS1820_temp_1)+ " °C": ""
+        const HumidityIn = item.humidity_in?Math.round(item.humidity_in) + " %": ""
+        const HumidityOut = item.humidity_out?Math.round(item.humidity_out) + " %": ""
+        const Rainbow = item.RAINBOW?Math.round(item.RAINBOW) + " ??": ""
+        const Light = item.light?Math.round(item.light) + " cd": ""
+        const Rain = item.rain?Math.round(item.rain) + " mm": ""
+        const WindDIrection = item.wind_direction?Math.round(item.wind_direction) + " °":""
         
         const row = document.createElement("tr");
       
@@ -38,7 +44,7 @@ const populateTable = (data, value) => {
 
         const valueColumn = document.createElement("td");
         valueColumn.className = "value-column";
-        valueColumn.innerHTML =  windSpeed || temp || airPres1
+        valueColumn.innerHTML =  windSpeed || temp|| airPres1
         || BMPtemp || DHT11Hum || DHTtemp || DStemp
         || HumidityIn || HumidityOut || Rainbow || Light
         || Rain || WindDIrection; 
@@ -119,6 +125,8 @@ selectValue.addEventListener('change', (event) => {
     fetchCollectors(selectValue.value, selectTime.value)
 
     console.log("time Inside select value: " ,selectTime.value)
+
+    resetTable();
     
  
 })
@@ -128,6 +136,8 @@ selectTime.addEventListener('change', (event) => {
 
     fetchCollectors(selectValue.value, selectTime.value)
     console.log("value Inside select time: " ,selectValue.value)
+
+    resetTable()
 
 
 })

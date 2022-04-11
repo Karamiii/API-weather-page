@@ -1,8 +1,11 @@
 "use strict";
 
 
+const resetTable = () => {
 
+    document.getElementById("collectors").innerHTML = " ";
 
+}
 
 
 const populateTable = (data) => {
@@ -112,10 +115,12 @@ selectTime.addEventListener('change', (event) => {
     if (selectTime.value === "0") {
         
         fetchCollectors2()
+        resetTable()
         
     }
     else {     
     fetchCollectors(selectTime.value)
+    resetTable()
     }
     
 })
