@@ -1,4 +1,4 @@
-Final project documentation.
+# Final project documentation.
 
 
 
@@ -30,14 +30,14 @@ Not really a big problem, more like an inconvenience
 
 RELEASE 1.1
 
--Made some visual and text changes
+- Made some visual and text changes
 
 ~ Deploying new version to tuni hompepage.
 
 
 RELEASE 1.2
 
--Fixed some units
+- Fixed some units
 
 ~ Deploying new version to tuni homepage.
 
