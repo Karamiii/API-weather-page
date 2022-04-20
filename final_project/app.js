@@ -2,7 +2,7 @@
 
 const resetTable = () => {
 
-    document.getElementById("collectors").innerHTML = " ";
+    document.getElementById("collectors").innerHTML = "";
 
 }
 
@@ -23,7 +23,7 @@ const populateTable = (data, value) => {
         const HumidityIn = item.humidity_in?Math.round(item.humidity_in) + " %": ""
         const HumidityOut = item.humidity_out?Math.round(item.humidity_out) + " %": ""
         const Rainbow = item.RAINBOW?Math.round(item.RAINBOW) + " ??": ""
-        const Light = item.light?Math.round(item.light) + " cd": ""
+        const Light = item.light?Math.round(item.light) + " lx": ""
         const Rain = item.rain?Math.round(item.rain) + " mm": ""
         const WindDIrection = item.wind_direction?Math.round(item.wind_direction) + " °":""
         
@@ -94,7 +94,7 @@ new Chart("valueChart", {
             },
             title: {
                 display: true,
-                text: value + ' chart'
+                text: value + ' Chart'
             }
         }
 

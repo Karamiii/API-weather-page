@@ -67,7 +67,7 @@ const populateTable = (data) => {
                 legend: {display: true},
                 title: {
                     display: true,
-                    text: "Wind speed"
+                    text: "Wind speed Chart"
                 }
             }
 

@@ -81,15 +81,12 @@ const populateTable = (data) => {
                 legend: {display: true},
                 title: {
                     display: true,
-                    text: "Temperatures"
+                    text: "Temperature Chart"
                 }
             }
 
         }
     })
-    
-
-
     
 }
 const fetchCollectors = async (time) => {
