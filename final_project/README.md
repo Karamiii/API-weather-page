@@ -19,7 +19,7 @@
  (fixed (Thnx Louis))
 
 10.04.2022:
-- Added 2 electors to main page to choose timespan and value which to inspect. Got it working but it all seems a bit slow? Might be the data stacking issue that slows the page.
+- Added 2 selectors to main page to choose timespan and value which to inspect. Got it working but it all seems a bit slow? Might be the data stacking issue that slows the page.
 
 18.4.2022:
 

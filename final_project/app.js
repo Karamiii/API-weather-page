@@ -102,6 +102,7 @@ new Chart("valueChart", {
 })
 
 }
+
 const fetchCollectors = async (value, valueTime) => {
     try { 
         console.log("Value:",value)
