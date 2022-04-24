@@ -9,7 +9,7 @@ const resetTable = () => {
 const populateTable = (data, value) => {
     const table = document.getElementById("collectors")
    
-    console.log("populate table value:", value)
+    //console.log("populate table value:", value)
 
     data.map(item => {
 
@@ -105,8 +105,8 @@ new Chart("valueChart", {
 
 const fetchCollectors = async (value, valueTime) => {
     try { 
-        console.log("Value:",value)
-        console.log("time:", valueTime)
+       // console.log("Value:",value)
+       // console.log("time:", valueTime)
         const response = await fetch ('https://webapi19sa-1.course.tamk.cloud/v1/weather/' + value + '/' + valueTime);
         const jsonData = await response.json();
        // console.log(jsonData)
@@ -125,7 +125,7 @@ selectValue.addEventListener('change', (event) => {
    
     fetchCollectors(selectValue.value, selectTime.value)
 
-    console.log("time Inside select value: " ,selectTime.value)
+    //console.log("time Inside select value: " ,selectTime.value)
 
     resetTable();
     
@@ -136,7 +136,7 @@ const selectTime = document.getElementById("timespanSelect");
 selectTime.addEventListener('change', (event) => {
 
     fetchCollectors(selectValue.value, selectTime.value)
-    console.log("value Inside select time: " ,selectValue.value)
+   // console.log("value Inside select time: " ,selectValue.value)
 
     resetTable()
 

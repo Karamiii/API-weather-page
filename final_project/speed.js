@@ -10,7 +10,7 @@ const resetTable = () => {
 const populateTable = (data) => {
     
     
-    // Creating a table of elements from APi data
+    
 
     const table = document.getElementById("collectors")
   
@@ -40,7 +40,7 @@ const populateTable = (data) => {
         table.appendChild(row)
     })
 
-    // Drawing a chart from fetched API data
+    
 
     const chart = Chart.getChart("speedChart");
     if (chart != undefined) {
@@ -75,7 +75,7 @@ const populateTable = (data) => {
     })  
 }    
     
-// Fething data from an API and sending in forwards to function(s)
+
 
 const fetchCollectors = async (time) => {
     try { 

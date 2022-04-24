@@ -107,7 +107,7 @@ const fetchCollectors = async (time) => {
 
 const selectTime = document.getElementById("timespanSelect");
 selectTime.addEventListener('change', (event) => {
-    console.log(selectTime.value)
+    
     
     if (selectTime.value === "0") {
         
