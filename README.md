@@ -1,6 +1,20 @@
 # Karam Chafqane
 
-# Final project documentation.
+This page is currently running on a TAMK server: https://homepages.tuni.fi/karam.chafqane/final_project/
+
+- This page will remain operatinal untill my graduation.
+
+## Notes
+
+18.12.2022
+- Some of the API endpoints are currently not operational. This is caused by the endpoints being student projects and they may be removed or adjusted as time goes on.
+
+
+#  Project documentation.
+
+
+
+
 
 
 05.04.2022:
