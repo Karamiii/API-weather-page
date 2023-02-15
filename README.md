@@ -19,11 +19,11 @@ This page is currently running on a TAMK server: https://homepages.tuni.fi/karam
 
 05.04.2022:
 - Started the project.
-- Got done with the navigation bar and fetching the data and displaying it. 
+- Got done with the navigation bar, fetching the data and displaying it. 
 - There is an issue with displaying the data on tuni homepages. (fixed (Had to change the "http" adress to "https"))
 
 07.04.2022:
-- Trying to create a chart for wind speed, but its dont displaying data correctly. (Fixed)
+- Trying to create a chart for wind speed, but it's not displaying data correctly. (Fixed)
 
 08.04.2022:
 - Added selector to choose the timespan of displayed data. 
@@ -31,7 +31,7 @@ This page is currently running on a TAMK server: https://homepages.tuni.fi/karam
  (fixed (Thnx Louis))
 
 10.04.2022:
-- Added 2 selectors to main page to choose timespan and value which to inspect. Got it working but it all seems a bit slow? Might be the data stacking issue that slows the page.
+- Added 2 selectors to main page to choose timespan and value which to inspect. Got it working but it all seems a bit slow? Might be the data stacking issue that slows the page (fixed).
 
 18.4.2022:
 
