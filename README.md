@@ -9,6 +9,8 @@ This page is currently running on a TAMK server: https://homepages.tuni.fi/karam
 18.12.2022
 - Some of the API endpoints are currently not operational. This is caused by the endpoints being student projects and they may be removed or adjusted as time goes on.
 
+10.5.2023
+- Seems like none of the endpoints are currently operational.
 
 #  Project documentation.
 
